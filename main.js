@@ -4,8 +4,26 @@ const getTeamData = async () => {
 	return await fetch(API_ENDPOINT).then((response) => response.json());
 };
 
+const generateTeamTitle = (teamContainerDiv) => {
+	const titleContainerDiv = document.createElement("div");
+	titleContainerDiv.classList.add("member_card", "title_item");
+
+	const titleBoxDiv = document.createElement("div");
+	titleBoxDiv.classList.add("title_box");
+
+	const title = document.createElement("h1");
+	title.classList.add("title", "animate_typewriter");
+	title.innerHTML = "Meet the Team Onyx";
+
+	titleBoxDiv.appendChild(title);
+	titleContainerDiv.appendChild(titleBoxDiv);
+	teamContainerDiv.appendChild(titleContainerDiv);
+};
+
 const createTeamCards = (data) => {
 	const teamContainerDiv = document.querySelector(".team_container");
+
+	generateTeamTitle(teamContainerDiv);
 
 	data.map((member) => {
 		const memberCardDiv = document.createElement("div");
