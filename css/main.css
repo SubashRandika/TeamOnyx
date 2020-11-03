@@ -285,8 +285,8 @@ body {
   background-color: #ffffff;
   -webkit-box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
           box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  -webkit-animation: imageFadeIn 1.5s linear forwards;
-          animation: imageFadeIn 1.5s linear forwards;
+  -webkit-animation: imageFadeIn 1.2s linear forwards;
+          animation: imageFadeIn 1.2s linear forwards;
 }
 
 @-webkit-keyframes imageFadeIn {
@@ -330,14 +330,14 @@ body {
   border-radius: 10px;
   width: 100%;
   position: relative;
-  -webkit-clip-path: circle(30% at 50% -80%);
-          clip-path: circle(30% at 50% -80%);
+  -webkit-clip-path: circle(30% at 50% -100%);
+          clip-path: circle(30% at 50% -100%);
   -webkit-animation-name: circle;
           animation-name: circle;
   -webkit-animation-duration: 2s;
           animation-duration: 2s;
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+  -webkit-animation-delay: 1.3s;
+          animation-delay: 1.3s;
   -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
   -webkit-animation-direction: forwards;
@@ -346,6 +346,7 @@ body {
           animation-fill-mode: forwards;
   -webkit-box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
           box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  opacity: 0;
 }
 
 .container .team_container .inner .name {
@@ -360,27 +361,31 @@ body {
 
 @-webkit-keyframes circle {
   0% {
-    -webkit-clip-path: circle(30% at 50% -70%);
-            clip-path: circle(30% at 50% -70%);
+    -webkit-clip-path: circle(30% at 50% -100%);
+            clip-path: circle(30% at 50% -100%);
     background: #00b6ff;
+    opacity: 0;
   }
   100% {
     -webkit-clip-path: circle(75%);
             clip-path: circle(75%);
     background: #07daa5;
+    opacity: 1;
   }
 }
 
 @keyframes circle {
   0% {
-    -webkit-clip-path: circle(30% at 50% -70%);
-            clip-path: circle(30% at 50% -70%);
+    -webkit-clip-path: circle(30% at 50% -100%);
+            clip-path: circle(30% at 50% -100%);
     background: #00b6ff;
+    opacity: 0;
   }
   100% {
     -webkit-clip-path: circle(75%);
             clip-path: circle(75%);
     background: #07daa5;
+    opacity: 1;
   }
 }
 /*# sourceMappingURL=main.css.map */

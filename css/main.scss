@@ -177,7 +177,7 @@ body {
 			border: 5px solid $white;
 			background-color: $white;
 			box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-			animation: imageFadeIn 1.5s linear forwards;
+			animation: imageFadeIn 1.2s linear forwards;
 		}
 
 		@keyframes imageFadeIn {
@@ -201,14 +201,15 @@ body {
 			border-radius: 10px;
 			width: 100%;
 			position: relative;
-			clip-path: circle(30% at 50% -80%);
+			clip-path: circle(30% at 50% -100%);
 			animation-name: circle;
 			animation-duration: 2s;
-			animation-delay: 0.5s;
+			animation-delay: 1.3s;
 			animation-iteration-count: 1;
 			animation-direction: forwards;
 			animation-fill-mode: forwards;
 			box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+			opacity: 0;
 
 			.name {
 				color: $white;
@@ -222,12 +223,14 @@ body {
 
 			@keyframes circle {
 				0% {
-					clip-path: circle(30% at 50% -70%);
+					clip-path: circle(30% at 50% -100%);
 					background: $secondary-color;
+					opacity: 0;
 				}
 				100% {
 					clip-path: circle(75%);
 					background: $primary-color;
+					opacity: 1;
 				}
 			}
 		}
