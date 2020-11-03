@@ -1,0 +1,225 @@
+$primary-color: rgb(7, 218, 165);
+$secondary-color: #00b6ff;
+$white: #ffffff;
+$background-color: #dcf5ff;
+$black: #000000;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Nunito", sans-serif;
+}
+
+body {
+	background: $background-color;
+	height: 100vh;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+
+	.team_container {
+		display: grid;
+		grid-template-columns: repeat(3, 400px);
+		grid-template-rows: repeat(2, 200px);
+		grid-column-gap: 50px;
+		grid-row-gap: 30px;
+		position: absolute;
+
+		.member_card {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+
+			.title_box {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 575px;
+				height: 130px;
+				position: relative;
+
+				.title {
+					font-size: 50px;
+					text-align: center;
+					width: 600px;
+					display: in-line;
+					width: 10.5em;
+					border-right: 3px solid $black;
+					text-align: center;
+					white-space: nowrap;
+					overflow: hidden;
+				}
+
+				.title.animate_typewriter {
+					animation: typewriter 2s steps(44) 0.2s 1 normal both, blinkCursor 500ms steps(44) 6 normal forwards;
+				}
+
+				@keyframes typewriter {
+					from {
+						width: 0;
+					}
+					to {
+						width: 10.5em;
+					}
+				}
+
+				@keyframes blinkCursor {
+					from {
+						border-right-color: $black;
+					}
+					to {
+						border-right-color: transparent;
+					}
+				}
+			}
+
+			.title_box::before {
+				content: "";
+				position: absolute;
+				top: -2px;
+				left: -2px;
+				width: 0;
+				height: 0;
+				background: transparent;
+				border: 5px solid transparent;
+				animation: topBorderAnimate 1s 2.5s linear forwards;
+			}
+
+			.title_box::after {
+				content: "";
+				position: absolute;
+				top: -2px;
+				left: -2px;
+				width: 0;
+				height: 0;
+				background: transparent;
+				border: 5px solid transparent;
+				animation: bottomBorderAnimate 1s 2.5s linear forwards;
+			}
+
+			@keyframes topBorderAnimate {
+				0% {
+					width: 0;
+					height: 0;
+					border-top-color: $secondary-color;
+					border-right-color: transparent;
+					border-bottom-color: transparent;
+					border-left-color: transparent;
+				}
+				50% {
+					width: 100%;
+					height: 0;
+					border-top-color: $primary-color;
+					border-right-color: $secondary-color;
+					border-bottom-color: transparent;
+					border-left-color: transparent;
+				}
+				100% {
+					width: 100%;
+					height: 100%;
+					border-top-color: $primary-color;
+					border-right-color: $primary-color;
+					border-bottom-color: transparent;
+					border-left-color: transparent;
+				}
+			}
+
+			@keyframes bottomBorderAnimate {
+				0% {
+					width: 0;
+					height: 0;
+					border-top-color: transparent;
+					border-right-color: transparent;
+					border-bottom-color: transparent;
+					border-left-color: $secondary-color;
+				}
+				50% {
+					width: 0;
+					height: 100%;
+					border-top-color: transparent;
+					border-right-color: transparent;
+					border-bottom-color: $secondary-color;
+					border-left-color: $primary-color;
+				}
+				100% {
+					width: 100%;
+					height: 100%;
+					border-top-color: transparent;
+					border-right-color: transparent;
+					border-bottom-color: $primary-color;
+					border-left-color: $primary-color;
+				}
+			}
+		}
+
+		.member_card.title_item {
+			display: flex;
+			align-items: center;
+			grid-column: 1 / span 2;
+		}
+
+		.profile_picture {
+			position: relative;
+			object-fit: cover;
+			object-position: top;
+			border-radius: 50%;
+			width: 140px;
+			height: 140px;
+			z-index: 100;
+			margin-bottom: -18px;
+			align-self: center;
+			border: 5px solid $white;
+			background-color: $white;
+			box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+		}
+
+		.inner {
+			display: flex;
+			flex-direction: column;
+			flex-wrap: nowrap;
+			justify-content: flex-end;
+			align-items: flex-start;
+			align-content: flex-end;
+			background: $primary-color;
+			padding: 1em;
+			border-radius: 10px;
+			width: 100%;
+			position: relative;
+			clip-path: circle(30% at 50% -80%);
+			animation-name: circle;
+			animation-duration: 2s;
+			animation-delay: 0.5s;
+			animation-iteration-count: 1;
+			animation-direction: forwards;
+			animation-fill-mode: forwards;
+			box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+			.name {
+				color: $white;
+				margin: 0;
+			}
+
+			.designation {
+				color: $white;
+				font-size: 0.8rem;
+			}
+
+			@keyframes circle {
+				0% {
+					clip-path: circle(30% at 50% -70%);
+					background: $secondary-color;
+				}
+				100% {
+					clip-path: circle(75%);
+					background: $primary-color;
+				}
+			}
+		}
+	}
+}
