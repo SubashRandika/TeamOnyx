@@ -168,15 +168,13 @@ body {
 			object-fit: cover;
 			object-position: top;
 			border-radius: 50%;
-			width: 140px;
-			height: 140px;
 			z-index: 100;
 			margin-bottom: -18px;
 			align-self: center;
 			border: 5px solid $white;
 			background-color: $white;
 			box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-			animation: imageFadeIn 1.2s linear forwards;
+			animation: imageFadeIn 1s linear forwards;
 		}
 
 		@keyframes imageFadeIn {

@@ -31,11 +31,12 @@ const createTeamCards = (data) => {
 		memberCardDiv.setAttribute("id", member.id);
 
 		memberCardDiv.innerHTML = `
-                    <img class="profile_picture" src="${member.imageUrl}" alt="Profile" />
+                    <img class="profile_picture" src="${member.imageUrl}" alt="Profile" width="140px" height="140px"/>
 					<div class="inner">
 						<h1 class="name">${member.name}</h1>
 						<p class="designation">${member.designation}</p>
 					</div>`;
+
 		teamContainerDiv.appendChild(memberCardDiv);
 	});
 };
