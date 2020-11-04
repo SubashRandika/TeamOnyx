@@ -1,19 +1,21 @@
-$primary-color: rgb(7, 218, 165);
-$secondary-color: #00b6ff;
+$primary-color: #8f293d;
+$secondary-color: #8f2970;
 $white: #ffffff;
-$background-color: #dcf5ff;
-$black: #000000;
+$background-color: #dfdbe5;
+$secondary-text: #ffecab;
+$black: #424548;
 
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: "Nunito", sans-serif;
+	font-family: "Roboto", sans-serif;
 }
 
 body {
-	background: $background-color;
 	height: 100vh;
+	background-color: $background-color;
+	background-image: url("data:image/svg+xml,%3Csvg width='12' height='16' viewBox='0 0 12 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 .99C4 .445 4.444 0 5 0c.552 0 1 .45 1 .99v4.02C6 5.555 5.556 6 5 6c-.552 0-1-.45-1-.99V.99zm6 8c0-.546.444-.99 1-.99.552 0 1 .45 1 .99v4.02c0 .546-.444.99-1 .99-.552 0-1-.45-1-.99V8.99z' fill='%239C92AC' fill-opacity='0.23' fill-rule='evenodd'/%3E%3C/svg%3E");
 }
 
 .container {
@@ -40,15 +42,14 @@ body {
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				width: 575px;
-				height: 130px;
+				width: 620px;
+				height: 100px;
 				position: relative;
 
 				.title {
 					font-size: 50px;
 					text-align: center;
-					width: 600px;
-					display: in-line;
+					width: 620px;
 					border-right: 3px solid $black;
 					text-align: center;
 					white-space: nowrap;
@@ -56,7 +57,7 @@ body {
 				}
 
 				.title.animate_typewriter {
-					animation: typewriter 2s steps(44) 0.2s 1 normal both, blinkCursor 500ms steps(44) 7 normal forwards;
+					animation: typewriter 2s steps(44) 0.2s 1 normal both, blinkCursor 500ms steps(44) 5 normal forwards;
 				}
 
 				@keyframes typewriter {
@@ -82,7 +83,7 @@ body {
 				content: "";
 				position: absolute;
 				top: -2px;
-				left: -2px;
+				left: 15px;
 				width: 0;
 				height: 0;
 				background: transparent;
@@ -94,7 +95,7 @@ body {
 				content: "";
 				position: absolute;
 				top: -2px;
-				left: -2px;
+				right: 15px;
 				width: 0;
 				height: 0;
 				background: transparent;
@@ -115,7 +116,7 @@ body {
 					width: 100%;
 					height: 0;
 					border-top-color: $primary-color;
-					border-right-color: $secondary-color;
+					border-right-color: transparent;
 					border-bottom-color: transparent;
 					border-left-color: transparent;
 				}
@@ -123,7 +124,7 @@ body {
 					width: 100%;
 					height: 100%;
 					border-top-color: $primary-color;
-					border-right-color: $primary-color;
+					border-right-color: transparent;
 					border-bottom-color: transparent;
 					border-left-color: transparent;
 				}
@@ -132,19 +133,19 @@ body {
 			@keyframes bottomBorderAnimate {
 				0% {
 					width: 0;
-					height: 0;
-					border-top-color: transparent;
-					border-right-color: transparent;
-					border-bottom-color: transparent;
-					border-left-color: $secondary-color;
-				}
-				50% {
-					width: 0;
 					height: 100%;
 					border-top-color: transparent;
 					border-right-color: transparent;
 					border-bottom-color: $secondary-color;
-					border-left-color: $primary-color;
+					border-left-color: transparent;
+				}
+				50% {
+					width: 100%;
+					height: 100%;
+					border-top-color: transparent;
+					border-right-color: transparent;
+					border-bottom-color: $secondary-color;
+					border-left-color: transparent;
 				}
 				100% {
 					width: 100%;
@@ -152,7 +153,7 @@ body {
 					border-top-color: transparent;
 					border-right-color: transparent;
 					border-bottom-color: $primary-color;
-					border-left-color: $primary-color;
+					border-left-color: transparent;
 				}
 			}
 		}
@@ -176,14 +177,18 @@ body {
 			border: 5px solid $white;
 			background-color: $white;
 			box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-			animation: imageFadeIn 1s linear forwards;
+			animation: scaleInFromCenter 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 		}
 
-		@keyframes imageFadeIn {
+		@keyframes scaleInFromCenter {
 			0% {
-				opacity: 0;
+				-webkit-transform: scale(0);
+				transform: scale(0);
+				opacity: 1;
 			}
 			100% {
+				-webkit-transform: scale(1);
+				transform: scale(1);
 				opacity: 1;
 			}
 		}
@@ -211,13 +216,14 @@ body {
 			opacity: 0;
 
 			.name {
+				font-weight: 400;
 				color: $white;
 				margin: 0;
 			}
 
 			.designation {
-				color: $white;
-				font-size: 0.8rem;
+				color: $secondary-text;
+				font-size: 0.9rem;
 			}
 
 			@keyframes circle {

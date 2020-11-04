@@ -13,7 +13,7 @@ const generateTeamTitle = (teamContainerDiv) => {
 
 	const title = document.createElement("h1");
 	title.classList.add("title", "animate_typewriter");
-	title.innerHTML = "Meet the Team Onyx";
+	title.innerHTML = "Introducing Team Onyx";
 
 	titleBoxDiv.appendChild(title);
 	titleContainerDiv.appendChild(titleBoxDiv);
