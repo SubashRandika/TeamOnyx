@@ -273,6 +273,8 @@ body {
   -o-object-position: top;
      object-position: top;
   border-radius: 50%;
+  width: 140px;
+  height: 140px;
   z-index: 100;
   margin-bottom: -18px;
   -ms-flex-item-align: center;
